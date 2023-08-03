@@ -34,12 +34,14 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  /* position: relative; */
 }
 
 .menu ul {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2.5rem;
+  /* flex-direction: column; */
 }
 
 .menu ul li {
@@ -69,7 +71,29 @@ body {
   border-radius: 0.5rem;
   cursor: pointer;
 }
+.nav__items {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 120px);
+  justify-content: space-around;
+}
 
+/* .nav__items.hO {
+  display: flex;
+} */
+
+span.line {
+  width: 36px;
+  height: 3px;
+  background: aliceblue;
+  border-radius: 0.3rem;
+}
+.hamburger {
+  display: none;
+}
+.close {
+  display: none;
+}
 @media only screen and (max-width: 890px) {
   .menu ul li {
     font-size: 0.8rem;
@@ -79,6 +103,90 @@ body {
     font-size: 0.8rem;
     border-radius: 0.3rem;
   }
+  .nav__items {
+    width: calc(100% - 90px);
+  }
 }
 @media only screen and (max-width: 750px) {
+  .nav__items {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    height: calc(100vh - 80px);
+    justify-content: start;
+    gap: 2rem;
+    padding: 2rem;
+    background: #f0f8ff12;
+    width: 100%;
+    top: 80px;
+    left: 0;
+    transition: all 0.3s ease;
+    transform: translateX(-100%);
+  }
+  .menu ul {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+    flex-direction: column;
+  }
+  .nav__items.active {
+    transform: translateX(0%);
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  .hamburger.active span {
+    display: none;
+  }
+  .hamburger.active .close {
+    display: block;
+  }
+}
+/* hero start */
+.herocon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(100vh - 80px);
+}
+
+.hero__left {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+span.subtitle {
+  font-size: 1.4rem;
+  color: #ddd;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 4rem;
+  width: 66%;
+}
+
+button.down {
+  background: var(--pink);
+  border: none;
+  outline: none;
+  padding: 0.9rem 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  letter-spacing: 1px;
 }
