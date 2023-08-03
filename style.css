@@ -48,6 +48,7 @@ body {
   font-size: 1.1rem;
   text-transform: capitalize;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .logo {
@@ -70,7 +71,13 @@ body {
   background: var(--pink);
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: all 0.3s;
 }
+
+.btns button:hover {
+  background: #d5bcff;
+}
+
 .nav__items {
   display: flex;
   align-items: center;
@@ -189,6 +196,10 @@ button.down {
   cursor: pointer;
   border-radius: 0.4rem;
   letter-spacing: 1px;
+  transition: all 0.3s;
+}
+button.down:hover {
+  background: #d5bcff;
 }
 
 @media only screen and (max-width: 1150px) {
